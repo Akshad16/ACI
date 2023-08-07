@@ -34,7 +34,7 @@ html::-webkit-scrollbar-thumb {
   background: var(--yellow);
 }
 
-.head {
+.header {
   position: sticky;
   top: 0;
   left: 0;
@@ -46,24 +46,24 @@ html::-webkit-scrollbar-thumb {
   justify-content: space-between;
   z-index: 1000;
 }
-.head .logo {
+.header .logo {
   font-size: 2.5rem;
   color: var(--black);
   text-transform: capitalize;
 }
-.head .logo span {
+.header .logo span {
   color: var(--yellow);
 }
-.head .navbar a {
+.header .navbar a {
   font-size: 2rem;
   color: var(--black);
   text-transform: capitalize;
   margin: 0 1rem;
 }
-.head .navbar a:hover {
+.header .navbar a:hover {
   color: var(--yellow);
 }
-.head .icons div {
+.header .icons div {
   height: 5rem;
   width: 5rem;
   line-height: 5rem;
@@ -74,16 +74,16 @@ html::-webkit-scrollbar-thumb {
   text-align: center;
   margin-left: 0.3rem;
 }
-.head .icons div:hover {
+.header .icons div:hover {
   background: var(--black);
   color: var(--white);
 }
-.head #menu-btn {
+.header #menu-btn {
   display: none;
 }
 
 @media (max-width: 1200px) {
-  .head {
+  .header {
     padding: 1.5rem 2 rem;
   }
 }
@@ -91,9 +91,29 @@ html::-webkit-scrollbar-thumb {
   html {
     font-size: 55%;
   }
+  .header #menu-btn {
+    display: inline-block;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-top: var(--border);
+    border-bottom: var(--border);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  .header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .header .navbar a {
+    display: block;
+    margin: 2rem;
+  }
 }
 @media (max-width: 450px) {
-  .head {
+  .header {
     font-size: 50%;
   }
 }
