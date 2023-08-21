@@ -4,7 +4,8 @@
     --yellow:#f5bf23;
     --black:#111;
     --white:#fff;
-    --light-color:#eee;
+    --light-bg:#F2F2F2;
+    --light-color:#867777e2;
     --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
     --border:.1rem solid rgba(0,0,0,.3);
 }
@@ -68,6 +69,29 @@ html{
         background: var(--yellow);
     }
 }
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    background: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 1.7rem;
+    text-transform: capitalize;
+
+    &:hover{
+        background: var(--yellow);
+        color: var(--black);
+    }
+}
+
+@keyframes fadIn {
+    0%{
+        top:50%;
+        opacity: 0;
+    }
+    
+}
 
 .header{
     position: sticky;
@@ -82,8 +106,11 @@ html{
     .logo{
         @include titleText(2.5rem);
         
-        span{
-            color:var(--yellow);
+        img{
+            height: 50px;
+            width: 200px;
+            border-radius: 5px;
+
         }
     }
     .navbar a{
@@ -112,17 +139,103 @@ html{
         background: var(--white);
         box-shadow: var(--box-shadow);
         padding: 1rem;
-        display: flex;
+        display: none;
         align-items: center;
         gap:1rem;
+        animation: fadeIn .2s liner;
         
+        &.active{
+            display: flex;
+        }
 
+        input{
+            width:100%;
+            padding:1.2rem 1.4rem;
+            background: var(--light-bg);
+            font-size:1.6rem;
+            color:var(--light-color);
+        }
+        label{
+            font-size: 2.5rem;
+            color:var(--black);
+            cursor: pointer;
+            margin: 0 1rem;
+
+            &:hover{
+                color:var(--yellow);
+            }
+        }
+       
 
     }
+    .login-form{
+        position: absolute;
+        top: 120%; left: 50%;
+        transform: translateX(-50%);
+        width: 40rem;
+        background: var(--white);
+        box-shadow: var(--box-shadow);
+        padding: 5rem;
+        text-align: center;
+        animation: fadeIn .2s liner;
+
+
+        h3{
+            @include titleText(2.5rem);
+            padding-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .box{
+            width: 100%;
+            padding:1.2rem 1.4rem;
+            background: var(--light-bg);
+            font-size:1.6rem;
+            color:var(--light-color);
+            margin:.7rem 0;
+        }
+
+        .flex{
+            display: flex;
+            align-items: center;
+            gap:.5rem;
+            padding-top: 1.5rem;
+            padding-bottom: 1rem;
+
+            label{
+                font-size: 1.5rem;
+                color: var(--light-color);
+                cursor: pointer;
+            }
+            a{
+                font-size: 1.5rem;
+                color: var(--light-color);
+                margin-left: auto;
+
+                &:hover{
+                    color: var(--yellow);
+                    text-decoration: underline;
+                }
+            }
+        }
+        .btn{
+            width: 100%;
+        }
+        p{
+            @include graphText(1.5rem);
+            padding-top: 1rem;
+
+            a{
+                color: var(--yellow);
+
+                &:hover{
+                    text-decoration: underline  ;
+                }
+            }
+        }
+        }
+
 }
-
-
-
 @media (max-width:1200px){
     .header{
         padding:1.5rem 2 rem;
