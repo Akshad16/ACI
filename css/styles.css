@@ -3,7 +3,7 @@
   --yellow:#f5bf23;
   --black:#111;
   --white:#fff;
-  --light-bg:#F2F2F2;
+  --light-bg:#efe9e9;
   --light-color:#867777e2;
   --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
   --border:.1rem solid rgba(0,0,0,.3);
@@ -92,7 +92,7 @@ html::-webkit-scrollbar-thumb {
   width: 5rem;
   line-height: 5rem;
   font-size: 2rem;
-  background: var --light-bg;
+  background: var(--light-bg);
   color: var(--black);
   cursor: pointer;
   text-align: center;
@@ -149,6 +149,10 @@ html::-webkit-scrollbar-thumb {
   padding: 5rem;
   text-align: center;
   animation: fadeIn 0.2s liner;
+  display: none;
+}
+.header .login-form.active {
+  display: block;
 }
 .header .login-form h3 {
   font-size: 2.5rem;
@@ -193,13 +197,91 @@ html::-webkit-scrollbar-thumb {
   font-size: 1.5rem;
   color: var(--light-color);
   line-height: 1.5;
-  padding-top: 1rem;
+  padding-top: 1.5rem;
 }
 .header .login-form p a {
   color: var(--yellow);
 }
 .header .login-form p a:hover {
   text-decoration: underline;
+}
+
+.contact-info {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 35rem;
+  background: var(--white);
+  height: 100%;
+  text-align: center;
+  z-index: 1100;
+  padding: 0 2rem;
+  padding-top: 5rem;
+  display: none;
+}
+.contact-info.active {
+  box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+  display: block;
+}
+.contact-info #close-contact-info {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+  font-size: 3rem;
+  color: var(--black);
+}
+.contact-info #close-contact-info:hover {
+  transform: rotate(90deg);
+}
+.contact-info .info {
+  padding: 2rem 0;
+}
+.contact-info .info i {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  background: var(--light-bg);
+  color: var(--black);
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.contact-info .info i:hover {
+  background: var(--black);
+  color: var(--white);
+}
+.contact-info .info h3 {
+  font-size: 2rem;
+  color: var(--black);
+  text-transform: capitalize;
+  padding: 1rem 0;
+}
+.contact-info .info p {
+  font-size: 1.5rem;
+  color: var(--light-color);
+  line-height: 1.5;
+}
+.contact-info .share {
+  padding-top: 1rem;
+  border-top: var(--border);
+  margin-top: 1rem;
+}
+.contact-info .share a {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  background: var(--light-bg);
+  color: var(--black);
+  cursor: pointer;
+  text-align: center;
+  margin: 0 0.3rem;
+}
+.contact-info .share a:hover {
+  background: var(--black);
+  color: var(--white);
 }
 
 @media (max-width: 1200px) {
@@ -234,8 +316,16 @@ html::-webkit-scrollbar-thumb {
     margin: 2rem;
   }
 }
+@media (max-width: 768px) {
+  .header .search-form {
+    width: 80%;
+  }
+  .header .login-form {
+    width: 50%;
+  }
+}
 @media (max-width: 450px) {
-  .header {
+  html {
     font-size: 50%;
   }
 }/*# sourceMappingURL=styles.css.map */
