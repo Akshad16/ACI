@@ -36,3 +36,47 @@ window.onscroll = () =>{
     loginForm.classList.remove('active');
     contactInfo.classList.remove('active');
 }
+
+
+var swiper = new Swiper(".home-slider", {
+    loop:true,
+    grabCurSor:true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+});
+
+var swiper = new Swiper(".reviews-slider", {
+    loop:true,
+    grabCurSor:true,
+    spaceBetween: 20,
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        991: {
+            slidesPerView: 3,
+        },
+    },
+});
+
+var swiper = new Swiper(".swiper-slide", {
+    loop:true,
+    grabCurSor:true,
+    spaceBetween: 20,
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        991: {
+            slidesPerView: 3,
+        },
+    },
+});
